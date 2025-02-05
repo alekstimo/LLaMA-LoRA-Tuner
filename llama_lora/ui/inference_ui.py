@@ -397,11 +397,9 @@ def inference_ui():
             )
             reload_selections_button = gr.Button(
                 "↻",
-                elem_id="inference_reload_selections_button"
+                elem_id="inference_reload_selections_button",
+                size="sm"
             )
-            reload_selections_button.style(
-                full_width=False,
-                size="sm")
         with gr.Row(elem_classes="disable_while_training"):
             with gr.Column():
                 with gr.Column(elem_id="inference_prompt_box"):
@@ -430,8 +428,7 @@ def inference_ui():
                         preview_prompt = gr.Textbox(
                             show_label=False, interactive=False, elem_id="inference_preview_prompt")
                         update_prompt_preview_btn = gr.Button(
-                            "↻", elem_id="inference_update_prompt_preview_btn")
-                        update_prompt_preview_btn.style(size="sm")
+                            "↻", elem_id="inference_update_prompt_preview_btn", size="sm")
 
                 # with gr.Column():
                 #     with gr.Row():
