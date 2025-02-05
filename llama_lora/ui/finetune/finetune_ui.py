@@ -324,19 +324,18 @@ def finetune_ui():
                         template = gr.Dropdown(
                             label="Template",
                             elem_id="finetune_template",
-                        )
+                         )
                         load_dataset_from = gr.Radio(
                             ["Text Input", "Data Dir"],
                             label="Load Dataset From",
                             value="Text Input",
-                            elem_id="finetune_load_dataset_from")
-                        reload_selections_button = gr.Button(
-                            "↻",
-                            elem_id="finetune_reload_selections_button"
+                            elem_id="finetune_load_dataset_from"
                         )
-                        reload_selections_button.style(
-                            full_width=False,
-                            size="sm")
+                        reload_selections_button = gr.Button(
+                        "↻",
+                        elem_id="finetune_reload_selections_button",
+                        size="sm"
+                        )
                     with gr.Column(
                         elem_id="finetune_dataset_from_data_dir_group",
                         visible=False
@@ -370,10 +369,7 @@ def finetune_ui():
                                 ["Plain Text", "JSON Lines", "JSON"],
                                 label="Format", value="Plain Text", elem_id="finetune_dataset_text_format")
                             dataset_text_load_sample_button = gr.Button(
-                                "Load Sample", elem_id="finetune_dataset_text_load_sample_button")
-                            dataset_text_load_sample_button.style(
-                                full_width=False,
-                                size="sm")
+                                "Load Sample", elem_id="finetune_dataset_text_load_sample_button", size="sm")
                         with gr.Column(elem_id="finetune_dataset_plain_text_separators_group") as dataset_plain_text_separators_group:
                             dataset_plain_text_input_variables_separator = gr.Textbox(
                                 label="Input Variables Separator",
@@ -540,10 +536,7 @@ def finetune_ui():
                             elem_id="finetune_continue_from_checkpoint")
                     with gr.Column():
                         load_params_from_model_btn = gr.Button(
-                            "Load training parameters from selected model", visible=False)
-                        load_params_from_model_btn.style(
-                            full_width=False,
-                            size="sm")
+                            "Load training parameters from selected model", visible=False, size="sm")
                         load_params_from_model_message = gr.Markdown(
                             "", visible=False)
 
@@ -596,10 +589,9 @@ def finetune_ui():
                             )
                             lora_target_modules_add_btn = gr.Button(
                                 "Add",
-                                elem_id="finetune_lora_target_modules_add_btn"
+                                elem_id="finetune_lora_target_modules_add_btn",
+                                size="sm"
                             )
-                            lora_target_modules_add_btn.style(
-                                full_width=False, size="sm")
                     things_that_might_timeout.append(lora_target_modules_add_btn.click(
                         handle_lora_target_modules_add,
                         inputs=[lora_target_module_choices,
@@ -627,10 +619,9 @@ def finetune_ui():
                                 )
                                 lora_modules_to_save_add_btn = gr.Button(
                                     "Add",
-                                    elem_id="finetune_lora_modules_to_save_add_btn"
+                                    elem_id="finetune_lora_modules_to_save_add_btn",
+                                    size="sm"
                                 )
-                                lora_modules_to_save_add_btn.style(
-                                    full_width=False, size="sm")
                         things_that_might_timeout.append(lora_modules_to_save_add_btn.click(
                             handle_lora_modules_to_save_add,
                             inputs=[lora_modules_to_save_choices,
